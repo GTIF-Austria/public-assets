@@ -1,0 +1,59 @@
+{
+    "legend": {
+        "title": "Wind power density",
+        "range": [
+            "rgba(0, 0, 0, 1)",
+            "rgba(255, 255, 255, 1)"
+        ],
+        "domainProperties": ["vmin", "vmax"]
+    },
+    "variables": {
+        "vmin": 0,
+        "vmax": 1000
+    },
+    "color": [
+        "case",
+        [">", ["band", 1], 0],
+        [
+            "interpolate",
+            ["linear"],
+            [
+                "/",
+                ["-", ["band", 1], ["var", "vmin"]],
+                ["-", ["var", "vmax"], ["var", "vmin"]]
+            ],
+            0,
+            [0, 0, 0, 1],
+            1,
+            [255, 255, 255, 1]
+        ],
+        ["color", 0, 0, 0, 0]
+    ],
+    "jsonform": {
+        "type": "object",
+        "title": "Data configuration",
+        "properties": {
+            "vminmax": {
+                "title": "Wind power density",
+                "type": "object",
+                "properties": {
+                    "vmin": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 3000,
+                        "format": "range",
+                        "default": 0
+                    },
+                    "vmax": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 3000,
+                        "format": "range",
+                        "default": 1000
+                    }
+                },
+                "format": "minmax"
+            }
+        }
+    }
+}
