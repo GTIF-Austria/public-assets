@@ -1,5 +1,9 @@
 {
     "fill-color": "green",
     "stroke-color": "black",
-    "stroke-width": 1
+    "stroke-width": 1,
+    "tooltip": [
+        {"id": "ID", "title": "Identifier"},
+        {"id": "resolution", "title": "Resolution"}
+    ]
   }
