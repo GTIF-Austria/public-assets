@@ -5,11 +5,21 @@
     "type": "object",
     "properties": {
         "feature": {
-            "type": "spatial",
-            "title": "Select feature on map",
+            "type": "string",
+            "title": "Select a point on the map",
             "options": {
-                "for": "eox-map#main",
-                "layerId": "predictive_maintenance;:;2025-01-01T00:00:00Z;:;0",
+                "drawtools": {
+                    "for": "eox-map#main",
+                    "layerId": "predictive_maintenance;:;2025-01-01T00:00:00Z;:;0",
+                    "continuous": true,
+                    "featureStyles" :{
+                        "click": {
+                          "fill-color": "rgba(51, 153, 204,0.5)",
+                          "stroke-color": "#3399CC",
+                          "stroke-width": 2.5
+                        }
+                      }
+                },
                 "type": "string",
                 "featureProperty": "ID"
             },
