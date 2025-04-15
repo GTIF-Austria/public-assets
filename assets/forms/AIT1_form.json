@@ -1,0 +1,19 @@
+{
+    "options": {
+        "execute": true
+    },
+    "type": "object",
+    "properties": {
+        "feature": {
+            "type": "spatial",
+            "title": "Select feature on map",
+            "options": {
+                "for": "eox-map#main",
+                "layerId": "predictive_maintenance;:;2025-01-01T00:00:00Z;:;0",
+                "type": "string",
+                "featureProperty": "ID"
+            },
+            "format": "feature"
+        }
+    }
+}
