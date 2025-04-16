@@ -1,32 +1,33 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Vertical deflection over time",
-    "data": {
-      "name": "timeseries"
-    },
+    "data": {"name": "timeseries"},
+    "transform": [
+        {
+            "calculate": "toDate(substring(datum.date, 0, 4) + '-' + substring(datum.date, 4, 6) + '-' + substring(datum.date, 6, 8))",
+            "as": "parsed_date"
+        }
+    ],
     "mark": {
-      "type": "line",
-      "point": {
-        "filled": true,
-        "fill": "blue"
-      },
-      "tooltip": true
+        "type": "line",
+        "point": {"filled": true, "fill": "blue"},
+        "tooltip": true
     },
     "encoding": {
-      "x": {
-        "field": "date",
-        "type": "temporal",
-        "title": "Date"
-      },
-      "y": {
-        "field": "deflection",
-        "type": "quantitative",
-        "title": "Vertical Deflection (mm)"
-      },
-      "tooltip": [
-        {"field": "date", "type": "temporal", "title": "Date"},
-        {"field": "deflection", "type": "quantitative", "title": "Deflection (mm)"}
-      ]
-    }
-  }
-  
+        "x": {"field": "parsed_date", "type": "temporal", "title": "Date"},
+        "y": {
+            "field": "vertical deflection in mm",
+            "type": "quantitative",
+            "title": "Vertical Deflection (mm)"
+        },
+        "tooltip": [
+            {"field": "parsed_date", "type": "temporal", "title": "Date"},
+            {
+                "field": "vertical deflection in mm",
+                "type": "nominal",
+                "title": "Deflection (mm)"
+            }
+        ]
+    },
+    "background": "transparent"
+}
