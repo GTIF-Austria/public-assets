@@ -1,8 +1,8 @@
 {
     "circle-stroke-color": "black",
     "circle-stroke-width": 1,
-    "circle-radius": 10,
-    "circle-fill-color": "blue",
+    "circle-radius": ["get", "size"],
+    "circle-fill-color": ["get", "color"],
     "tooltip": [
         {"id": "ID", "title": "Zone"}
     ]
