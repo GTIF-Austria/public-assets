@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Vertical deflection over time",
+  "data": {"name": "timeseries"},
+  "transform": [
+    {
+      "calculate": "year(datum.date)",
+      "as": "year"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "stroke": "#1f77b4"},
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "title": "Year",
+            "format": "%Y",
+            "tickCount": {"interval": "year", "step": 1}
+          }
+        },
+        "y": {
+          "title": "Vertical deflection [mm]",
+          "field": "vertical deflection in mm",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["date"],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "transform": [],
+      "mark": {
+        "type": "rule",
+        "color": "grey"
+      },
+      "encoding": {
+        "x": {"field": "date", "type": "temporal"},
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 0.5,
+            "empty": false
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date"},
+          {"field": "vertical deflection in mm", "type": "quantitative", "title": "Value", "format": ""}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": {"param": "hover"}}
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 90
+      },
+      "encoding": {
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "vertical deflection in mm", "type": "quantitative"},
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 0.5,
+            "empty": false
+          },
+          "value": 0
+        },
+      }
+    }
+  ],
+  "width": 600,
+  "height": 300
+}
