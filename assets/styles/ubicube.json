@@ -1,9 +1,31 @@
 {
-    "fill-color": "green",
-    "stroke-color": "black",
-    "stroke-width": 1,
-    "tooltip": [
-        {"id": "ID", "title": "Identifier"},
-        {"id": "resolution", "title": "Resolution"}
+    "jsonform": {
+        "type": "object",
+        "title": "Data configuration",
+        "properties": {
+            "yearminmax": {
+                "type": "object",
+                "properties": {
+                    "ymin": {"type": "number", "minimum": 2017, "step": 1, "maximum": 2025, "format": "range"},
+                    "ymax": {"type": "number", "minimum": 2017, "step": 1, "maximum": 2025, "format": "range"}
+                },
+                "format": "minmax"
+            }
+        }
+    },
+    "variables": {
+        "ymin": 2017,
+        "ymax": 2025
+    },
+    "fill-color": [
+        "case",
+        ["between", ["get", "resolution"], ["var", "ymin"], ["var", "ymax"]],
+        [
+            "match", ["get", "resolution"],
+            "2017.0", [0, 0, 255, 1],
+            "2018.0", [0, 255, 0, 1],
+            [0, 0, 0, 1]
+        ],
+        [0, 0, 0, 0]
     ]
-  }
+}
