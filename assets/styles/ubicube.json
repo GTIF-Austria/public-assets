@@ -47,7 +47,7 @@
     [0, 0, 0, 0]
   ],
   "stroke-color": [0, 0, 0, 1],
-  "tooltip": {
-    "fields": ["year"]
-  }
+  "tooltip": [
+        {"id": "year", "title": "Year"}
+    ]
 }
