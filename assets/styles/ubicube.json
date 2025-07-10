@@ -1,37 +1,50 @@
 {
-    "jsonform": {
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "yearminmax": {
         "type": "object",
-        "title": "Data configuration",
         "properties": {
-            "yearminmax": {
-                "type": "object",
-                "properties": {
-                    "ymin": {"type": "number", "minimum": 2017, "step": 1, "maximum": 2025, "format": "range"},
-                    "ymax": {"type": "number", "minimum": 2017, "step": 1, "maximum": 2025, "format": "range"}
-                },
-                "format": "minmax"
-            }
-        }
-    },
-    "variables": {
-        "ymin": 2017,
-        "ymax": 2025
-    },
-    "fill-color": [
-        "case",
-        ["between", ["get", "resolution"], ["var", "ymin"], ["var", "ymax"]],
-        [
-            "match", ["get", "resolution"],
-            "2017.0", [0, 0, 255, 1],
-            "2018.0", [0, 255, 0, 1],
-            "2019.0", [0, 255, 255, 1],
-            "2020.0", [255, 255, 0, 1],
-            "2021.0", [255, 165, 0, 1],
-            "2022.0", [255, 0, 0, 1],
-            "2023.0", [255, 0, 255, 1],
-            "2024.0", [128, 0, 128, 1],
-            [0, 0, 0, 1]
-        ],
-        [0, 0, 0, 0]
-    ]
+          "ymin": {
+            "type": "number",
+            "minimum": 2017,
+            "step": 1,
+            "maximum": 2025,
+            "format": "range"
+          },
+          "ymax": {
+            "type": "number",
+            "minimum": 2017,
+            "step": 1,
+            "maximum": 2025,
+            "format": "range"
+          }
+        },
+        "format": "minmax"
+      }
+    }
+  },
+  "variables": {
+    "ymin": 2017,
+    "ymax": 2025
+  },
+  "fill-color": [
+    "case",
+    ["between", ["get", "resolution"], ["var", "ymin"], ["var", "ymax"]],
+    [
+      "match", ["get", "resolution"],
+      "2017.0", [173, 216, 230, 1],
+      "2018.0", [135, 206, 235, 1],
+      "2019.0", [100, 149, 237, 1],
+      "2020.0", [65, 105, 225, 1],
+      "2021.0", [30, 144, 255, 1],
+      "2022.0", [0, 0, 255, 1],
+      "2023.0", [0, 0, 139, 1],
+      "2024.0", [0, 0, 100, 1],
+      [0, 0, 0, 1]
+    ],
+    [0, 0, 0, 0]
+  ],
+  "stroke-color": [0, 0, 0, 1]
 }
