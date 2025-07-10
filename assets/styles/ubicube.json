@@ -31,9 +31,9 @@
   },
   "fill-color": [
     "case",
-    ["between", ["get", "resolution"], ["var", "ymin"], ["var", "ymax"]],
+    ["between", ["get", "year"], ["var", "ymin"], ["var", "ymax"]],
     [
-      "match", ["get", "resolution"],
+      "match", ["get", "year"],
       "2017.0", [173, 216, 230, 1],
       "2018.0", [135, 206, 235, 1],
       "2019.0", [100, 149, 237, 1],
