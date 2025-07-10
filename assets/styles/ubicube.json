@@ -46,8 +46,10 @@
     ],
     [0, 0, 0, 0]
   ],
-  "stroke-color": [0, 0, 0, 1],
+  "stroke-color": "black",
+  "stroke-width": 1,
   "tooltip": [
-        {"id": "year", "title": "Year"}
-    ]
+    {"id": "ID", "title": "Identifier"},
+    {"id": "year", "title": "Year"}
+  ]
 }
