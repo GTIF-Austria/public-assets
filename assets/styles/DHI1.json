@@ -14,11 +14,27 @@
     },
     "variables": {
         "vmin": 0,
-        "vmax": 1000
+        "vmax": 1000,
+        "elevationMin": 0,
+        "elevationMax": 4000,
+        "slopeMin": 0,
+        "slopeMax": 50,
+        "settlementDistance": 0
     },
     "color": [
         "case",
-        [">", ["band", 1], 0],
+        [
+            "all",
+            [">", ["band", 1], 0],
+            [
+                "between",
+                ["band", 2],
+                ["var", "elevationMin"],
+                ["var", "elevationMax"]
+            ],
+            ["between", ["band", 3], ["var", "slopeMin"], ["var", "slopeMax"]],
+            [">=", ["band", 4], ["var", "settlementDistance"]]
+        ],
         [
             "interpolate",
             ["linear"],
@@ -27,13 +43,20 @@
                 ["-", ["band", 1], ["var", "vmin"]],
                 ["-", ["var", "vmax"], ["var", "vmin"]]
             ],
-            0, [64, 128, 128, 1],
-            0.166, [128, 192, 192, 1],
-            0.333, [192, 224, 224, 1],
-            0.5,[255, 255, 255, 1],
-            0.666, [255, 192, 128, 1],
-            0.833, [255, 128, 64, 1],
-            1, [255, 64, 32, 1]
+            0,
+            [64, 128, 128, 1],
+            0.166,
+            [128, 192, 192, 1],
+            0.333,
+            [192, 224, 224, 1],
+            0.5,
+            [255, 255, 255, 1],
+            0.666,
+            [255, 192, 128, 1],
+            0.833,
+            [255, 128, 64, 1],
+            1,
+            [255, 64, 32, 1]
         ],
         ["color", 0, 0, 0, 0]
     ],
@@ -61,6 +84,56 @@
                     }
                 },
                 "format": "minmax"
+            },
+            "vminmax2": {
+                "title": "Elevation range",
+                "type": "object",
+                "properties": {
+                    "elevationMin": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 4000,
+                        "format": "range",
+                        "default": 0
+                    },
+                    "elevationMax": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 4000,
+                        "format": "range",
+                        "default": 4000
+                    }
+                },
+                "format": "minmax"
+            },
+            "vminmax3": {
+                "title": "Slope range",
+                "type": "object",
+                "properties": {
+                    "slopeMin": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 50,
+                        "format": "range",
+                        "default": 0
+                    },
+                    "slopeMax": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 50,
+                        "format": "range",
+                        "default": 50
+                    }
+                },
+                "format": "minmax"
+            },
+            "settlementDistance": {
+                "title": "Distance to settlements",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 5000,
+                "format": "range",
+                "default": 0
             }
         }
     }
