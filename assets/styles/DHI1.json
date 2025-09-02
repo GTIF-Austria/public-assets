@@ -10,15 +10,15 @@
             "rgba(255, 128, 64, 1)",
             "rgba(255, 64, 32, 1)"
         ],
-        "domainProperties": ["vmin", "vmax"]
+        "domainProperties": ["powermin", "powermax"]
     },
     "variables": {
-        "vmin": 0,
-        "vmax": 1000,
-        "elevationMin": 0,
-        "elevationMax": 4000,
-        "slopeMin": 0,
-        "slopeMax": 50,
+        "powermin": 0,
+        "powermax": 1000,
+        "elevationmin": 0,
+        "elevationmax": 4000,
+        "slopemin": 0,
+        "slopemax": 50,
         "settlementDistance": 0
     },
     "color": [
@@ -29,10 +29,10 @@
             [
                 "between",
                 ["band", 2],
-                ["var", "elevationMin"],
-                ["var", "elevationMax"]
+                ["var", "elevationmin"],
+                ["var", "elevationmax"]
             ],
-            ["between", ["band", 3], ["var", "slopeMin"], ["var", "slopeMax"]],
+            ["between", ["band", 3], ["var", "slopemin"], ["var", "slopemax"]],
             [">=", ["band", 4], ["var", "settlementDistance"]]
         ],
         [
@@ -40,8 +40,8 @@
             ["linear"],
             [
                 "/",
-                ["-", ["band", 1], ["var", "vmin"]],
-                ["-", ["var", "vmax"], ["var", "vmin"]]
+                ["-", ["band", 1], ["var", "powermin"]],
+                ["-", ["var", "powermax"], ["var", "powermin"]]
             ],
             0,
             [64, 128, 128, 1],
@@ -64,18 +64,18 @@
         "type": "object",
         "title": "Data configuration",
         "properties": {
-            "vminmax": {
+            "powerrange": {
                 "title": "Wind power density",
                 "type": "object",
                 "properties": {
-                    "vmin": {
+                    "powermin": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 3000,
                         "format": "range",
                         "default": 0
                     },
-                    "vmax": {
+                    "powermax": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 3000,
@@ -85,18 +85,18 @@
                 },
                 "format": "minmax"
             },
-            "vminmax2": {
+            "elevationrange": {
                 "title": "Elevation range",
                 "type": "object",
                 "properties": {
-                    "elevationMin": {
+                    "elevationmin": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 4000,
                         "format": "range",
                         "default": 0
                     },
-                    "elevationMax": {
+                    "elevationmax": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 4000,
@@ -106,18 +106,18 @@
                 },
                 "format": "minmax"
             },
-            "vminmax3": {
+            "sloperange": {
                 "title": "Slope range",
                 "type": "object",
                 "properties": {
-                    "slopeMin": {
+                    "slopemin": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 50,
                         "format": "range",
                         "default": 0
                     },
-                    "slopeMax": {
+                    "slopemax": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 50,
