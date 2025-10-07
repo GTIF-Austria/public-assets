@@ -1,0 +1,18 @@
+{
+  "circle-stroke-color": "black",
+  "circle-stroke-width": 1,
+  "circle-radius": ["get", "size"],
+  "circle-fill-color": ["get", "color"],
+  "tooltip": [{"id": "ID", "title": "Zone"}],
+  "text-value": [
+    "case",
+    ["==", ["%", ["get", "km"], 0.5], 0],
+    ["to-string", ["get", "km"]],
+    ""
+  ],
+  "text-font": "bold 12px sans-serif",
+  "text-fill-color": "black",
+  "text-offset-x": 10,
+  "text-offset-y": 0,
+  "text-align": "left"
+}
