@@ -29,6 +29,71 @@
       }
     },
     {
+      "mark": {"type": "line", "stroke": "#e74c3c", "strokeDash": [5, 5], "strokeWidth": 2},
+      "transform": [
+        {
+          "regression": "vertical deflection in mm",
+          "on": "date",
+          "method": "linear"
+        }
+      ],
+      "encoding": {
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "vertical deflection in mm", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "vertical deflection in mm",
+          "on": "date",
+          "method": "linear",
+          "params": true
+        },
+        {"calculate": "'Trend: ' + format(datum.coef[1] * 365.25 * 24 * 60 * 60 * 1000, '.3f') + ' mm/year'", "as": "equation"},
+        {"calculate": "'R² = ' + format(datum.rSquared, '.4f')", "as": "r2"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "top",
+        "dx": -5,
+        "dy": 5,
+        "fontSize": 11,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "x": {"value": "width"},
+        "y": {"value": 10},
+        "text": {"field": "equation", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "vertical deflection in mm",
+          "on": "date",
+          "method": "linear",
+          "params": true
+        },
+        {"calculate": "'R² = ' + format(datum.rSquared, '.4f')", "as": "r2"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "top",
+        "dx": -5,
+        "dy": 20,
+        "fontSize": 11,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "x": {"value": "width"},
+        "y": {"value": 10},
+        "text": {"field": "r2", "type": "nominal"}
+      }
+    },
+    {
       "params": [
         {
           "name": "hover",
