@@ -11,7 +11,7 @@
     ""
   ],
   "text-font": "bold 12px sans-serif",
-  "text-fill-color": "white",
+  "text-fill-color": "black",
   "text-offset-x": 10,
   "text-offset-y": 0,
   "text-align": "left"
