@@ -61,7 +61,7 @@
     "x": {
       "field": "metric",
       "type": "nominal",
-      "axis": { "labelAngle": 0, "title": "metric" }
+      "axis": { "labelAngle": -40, "title": "metric" }
     },
     "xOffset": { "field": "feature_id", "type": "nominal" },
     "y": {
