@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "data": {"name": "air_eepot_chart"},
+  "data": { "name": "air_eepot_chart" },
   "params": [
     {
       "name": "prefix",
@@ -12,58 +12,41 @@
         "name": "Metric Group: "
       }
     },
-    {"name": "grid", "select": "interval", "bind": "scales"}
+    { "name": "grid", "select": "interval", "bind": "scales" }
   ],
   "transform": [
-    { "flatten": ["features"] },
-    { "calculate": "datum.features.properties.id", "as": "feature_id" },
-    { "calculate": "datum.features.properties.name", "as": "feature_name" },
-    { "calculate": "datum.features.properties.e_2030_high_wocc", "as": "e_2030_high_wocc" },
-    { "calculate": "datum.features.properties.e_2030_low_wocc", "as": "e_2030_low_wocc" },
-    { "calculate": "datum.features.properties.e_2030_medium_wocc", "as": "e_2030_medium_wocc" },
-    { "calculate": "datum.features.properties.e_2040_high_wocc", "as": "e_2040_high_wocc" },
-    { "calculate": "datum.features.properties.e_2040_low_wocc", "as": "e_2040_low_wocc" },
-    { "calculate": "datum.features.properties.e_2040_medium_wocc", "as": "e_2040_medium_wocc" },
-    { "calculate": "datum.features.properties.e_bestand", "as": "e_bestand" },
-    { "calculate": "datum.features.properties.e_technisches_potenzial", "as": "e_technisches_potenzial" },
-
-    { "calculate": "datum.features.properties.p_2030_high_wocc", "as": "p_2030_high_wocc" },
-    { "calculate": "datum.features.properties.p_2030_low_wocc", "as": "p_2030_low_wocc" },
-    { "calculate": "datum.features.properties.p_2030_medium_wocc", "as": "p_2030_medium_wocc" },
-    { "calculate": "datum.features.properties.p_2040_high_wocc", "as": "p_2040_high_wocc" },
-    { "calculate": "datum.features.properties.p_2040_low_wocc", "as": "p_2040_low_wocc" },
-    { "calculate": "datum.features.properties.p_2040_medium_wocc", "as": "p_2040_medium_wocc" },
-    { "calculate": "datum.features.properties.p_bestand", "as": "p_bestand" },
-    { "calculate": "datum.features.properties.p_technisches_potenzial", "as": "p_technisches_potenzial" },
-
-    { "calculate": "datum.features.properties.mv_2030_high_wocc", "as": "mv_2030_high_wocc" },
-    { "calculate": "datum.features.properties.mv_2030_low_wocc", "as": "mv_2030_low_wocc" },
-    { "calculate": "datum.features.properties.mv_2030_medium_wocc", "as": "mv_2030_medium_wocc" },
-    { "calculate": "datum.features.properties.mv_2040_high_wocc", "as": "mv_2040_high_wocc" },
-    { "calculate": "datum.features.properties.mv_2040_low_wocc", "as": "mv_2040_low_wocc" },
-    { "calculate": "datum.features.properties.mv_2040_medium_wocc", "as": "mv_2040_medium_wocc" },
-
-    { "calculate": "datum.features.properties.lcoe_2030_high_wocc", "as": "lcoe_2030_high_wocc" },
-    { "calculate": "datum.features.properties.lcoe_2030_low_wocc", "as": "lcoe_2030_low_wocc" },
-    { "calculate": "datum.features.properties.lcoe_2030_medium_wocc", "as": "lcoe_2030_medium_wocc" },
-    { "calculate": "datum.features.properties.lcoe_2040_high_wocc", "as": "lcoe_2040_high_wocc" },
-    { "calculate": "datum.features.properties.lcoe_2040_low_wocc", "as": "lcoe_2040_low_wocc" },
-    { "calculate": "datum.features.properties.lcoe_2040_medium_wocc", "as": "lcoe_2040_medium_wocc" },
+    { "calculate": "datum.id", "as": "feature_id" },
+    { "calculate": "datum.name", "as": "feature_name" },
     {
       "fold": [
-        "e_2030_high_wocc","e_2030_low_wocc","e_2030_medium_wocc",
-        "e_2040_high_wocc","e_2040_low_wocc","e_2040_medium_wocc",
-        "e_bestand","e_technisches_potenzial",
-
-        "p_2030_high_wocc","p_2030_low_wocc","p_2030_medium_wocc",
-        "p_2040_high_wocc","p_2040_low_wocc","p_2040_medium_wocc",
-        "p_bestand","p_technisches_potenzial",
-
-        "mv_2030_high_wocc","mv_2030_low_wocc","mv_2030_medium_wocc",
-        "mv_2040_high_wocc","mv_2040_low_wocc","mv_2040_medium_wocc",
-
-        "lcoe_2030_high_wocc","lcoe_2030_low_wocc","lcoe_2030_medium_wocc",
-        "lcoe_2040_high_wocc","lcoe_2040_low_wocc","lcoe_2040_medium_wocc"
+        "e_2030_high_wocc",
+        "e_2030_low_wocc",
+        "e_2030_medium_wocc",
+        "e_2040_high_wocc",
+        "e_2040_low_wocc",
+        "e_2040_medium_wocc",
+        "e_bestand",
+        "e_technisches_potenzial",
+        "p_2030_high_wocc",
+        "p_2030_low_wocc",
+        "p_2030_medium_wocc",
+        "p_2040_high_wocc",
+        "p_2040_low_wocc",
+        "p_2040_medium_wocc",
+        "p_bestand",
+        "p_technisches_potenzial",
+        "mv_2030_high_wocc",
+        "mv_2030_low_wocc",
+        "mv_2030_medium_wocc",
+        "mv_2040_high_wocc",
+        "mv_2040_low_wocc",
+        "mv_2040_medium_wocc",
+        "lcoe_2030_high_wocc",
+        "lcoe_2030_low_wocc",
+        "lcoe_2030_medium_wocc",
+        "lcoe_2040_high_wocc",
+        "lcoe_2040_low_wocc",
+        "lcoe_2040_medium_wocc"
       ],
       "as": ["metric", "value"]
     },
