@@ -8,12 +8,18 @@
       "bind": {
         "input": "select",
         "options": ["e", "p", "mv", "lcoe"],
-        "labels": ["Energy (e)", "Power (p)", "MV", "LCOE (lcoe)"],
-        "name": "Metric Group: "
+        "labels": [
+          "Energy [GWh]",
+          "Power [MW]",
+          "Market Value [€/MWh]",
+          "Levelized Cost of Energy [€/MWh]"
+        ],
+        "name": "Metric:"
       }
     },
     { "name": "grid", "select": "interval", "bind": "scales" }
   ],
+  "title": "Air Source Heat Pump",
   "transform": [
     { "calculate": "datum.id", "as": "feature_id" },
     { "calculate": "datum.name", "as": "feature_name" },
@@ -50,18 +56,23 @@
       ],
       "as": ["metric", "value"]
     },
+    { "filter": "test('^' + prefix + '_', datum.metric)" },
     {
-      "filter": "test('^' + prefix + '_', datum.metric)"
+      "calculate": "(datum.metric == 'e_bestand' || datum.metric == 'p_bestand' || datum.metric == 'mv_bestand' || datum.metric == 'lcoe_bestand') ? 1 :(datum.metric == 'e_technisches_potenzial' || datum.metric == 'p_technisches_potenzial' || datum.metric == 'mv_technisches_potenzial' || datum.metric == 'lcoe_technisches_potenzial') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2030 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2040 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
+      "as": "sort_index"
     }
   ],
-
   "mark": { "type": "bar" },
-
   "encoding": {
     "x": {
       "field": "metric",
       "type": "nominal",
-      "axis": { "labelAngle": -40, "title": "metric" }
+      "sort": { "field": "sort_index", "order": "ascending" },
+      "axis": {
+        "labelAngle": 0,
+        "title": "",
+        "labelExpr": "replace(replace(replace(replace(replace(replace(replace(replace(datum.label,'e_', ''), 'mv_', ''), 'p_', ''),'lcoe_', ''),'_wocc',''),'technisches_potenzial','Technical potential'),'technisches_potenzial','bestand', 'current'),'_',' ')"
+      }
     },
     "xOffset": { "field": "feature_id", "type": "nominal" },
     "y": {
