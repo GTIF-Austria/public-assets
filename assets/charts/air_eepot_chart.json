@@ -7,10 +7,10 @@
       "value": "e",
       "bind": {
         "input": "select",
-        "options": ["e", "p", "mv", "lcoe"],
+        "options": ["e", "c", "mv", "lcoe"],
         "labels": [
           "Energy [GWh]",
-          "Power [MW]",
+          "Capacity [MW]",
           "Market Value [€/MWh]",
           "Levelized Cost of Energy [€/MWh]"
         ],
@@ -31,16 +31,16 @@
         "e_2040_high_wocc",
         "e_2040_low_wocc",
         "e_2040_medium_wocc",
-        "e_bestand",
-        "e_technisches_potenzial",
-        "p_2030_high_wocc",
-        "p_2030_low_wocc",
-        "p_2030_medium_wocc",
-        "p_2040_high_wocc",
-        "p_2040_low_wocc",
-        "p_2040_medium_wocc",
-        "p_bestand",
-        "p_technisches_potenzial",
+        "e_current",
+        "e_technical_potential",
+        "c_2030_high_wocc",
+        "c_2030_low_wocc",
+        "c_2030_medium_wocc",
+        "c_2040_high_wocc",
+        "c_2040_low_wocc",
+        "c_2040_medium_wocc",
+        "c_current",
+        "c_technical_potential",
         "mv_2030_high_wocc",
         "mv_2030_low_wocc",
         "mv_2030_medium_wocc",
@@ -58,7 +58,7 @@
     },
     { "filter": "test('^' + prefix + '_', datum.metric)" },
     {
-      "calculate": "(datum.metric == 'e_bestand' || datum.metric == 'p_bestand' || datum.metric == 'mv_bestand' || datum.metric == 'lcoe_bestand') ? 1 :(datum.metric == 'e_technisches_potenzial' || datum.metric == 'p_technisches_potenzial' || datum.metric == 'mv_technisches_potenzial' || datum.metric == 'lcoe_technisches_potenzial') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2030 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2040 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
+      "calculate": "(datum.metric == 'e_current' || datum.metric == 'c_current' || datum.metric == 'mv_current' || datum.metric == 'lcoe_current') ? 1 :(datum.metric == 'e_technical_potential' || datum.metric == 'c_technical_potential' || datum.metric == 'mv_technical_potential' || datum.metric == 'lcoe_technical_potential') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2030 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2040 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
       "as": "sort_index"
     }
   ],
@@ -71,7 +71,7 @@
       "axis": {
         "labelAngle": 0,
         "title": "",
-        "labelExpr": "replace(replace(replace(replace(replace(replace(replace(replace(datum.label,'e_', ''), 'mv_', ''), 'p_', ''),'lcoe_', ''),'_wocc',''),'technisches_potenzial','Technical potential'),'technisches_potenzial','bestand', 'current'),'_',' ')"
+        "labelExpr": "replace(replace(replace(replace(replace(replace(replace(replace(datum.label,'e_', ''), 'mv_', ''), 'c_', ''),'lcoe_', ''),'_wocc',''),'technical_potential','Technical potential'),'technical_potential','current', 'current'),'_',' ')"
       }
     },
     "xOffset": { "field": "feature_id", "type": "nominal" },
