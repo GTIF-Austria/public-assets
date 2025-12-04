@@ -69,7 +69,7 @@
       "type": "nominal",
       "sort": { "field": "sort_index", "order": "ascending" },
       "axis": {
-        "labelAngle": 0,
+        "labelAngle": 50,
         "title": "",
         "labelExpr": "replace(replace(replace(replace(replace(replace(replace(replace(datum.label,'e_', ''), 'mv_', ''), 'c_', ''),'lcoe_', ''),'_wocc',''),'technical_potential','Technical potential'),'technical_potential','current', 'current'),'_',' ')"
       }
