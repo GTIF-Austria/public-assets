@@ -141,8 +141,9 @@
     "y": {"field": "value", "type": "quantitative", "axis": {"title": "value"}},
     "color": {
       "field": "feature_name",
-      "type": "ordinal",
+      "type": "nominal",
       "title": "Municipality",
+      "sort": null,
       "scale": {
         "range": [
           "#1f77b4",
