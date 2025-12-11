@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "closed_systems_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Air Source Heat Pump;:;EPSG:3857",
+                    "layerId": "closed_systems_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Closed Systems;:;EPSG:3857",
                     "featureNameKey": "name",
                     "featureStyles": {
                         "click": {
