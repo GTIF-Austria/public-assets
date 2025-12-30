@@ -55,7 +55,7 @@
             "as": "feature_id"
         },
         {
-            "calculate": "datum.name",
+            "calculate": "datum.pb",
             "as": "feature_name"
         },
         {
