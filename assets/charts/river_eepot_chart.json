@@ -1,0 +1,167 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "data": {
+        "name": "river_eepot_chart"
+    },
+    "params": [
+        {
+            "name": "prefix",
+            "value": "e",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "e",
+                    "c",
+                    "mv",
+                    "lcoe"
+                ],
+                "labels": [
+                    "Energy [GWh]",
+                    "Capacity [MW]",
+                    "Market Value [€/MWh]",
+                    "Levelized Cost of Energy [€/MWh]"
+                ],
+                "name": "Metric: "
+            }
+        },
+        {
+            "name": "suffix",
+            "value": "wocc",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "wocc"
+                ],
+                "labels": [
+                    "Without Climate Change"
+                ],
+                "name": "Climate Change:"
+            }
+        },
+        {
+            "name": "grid",
+            "select": "interval",
+            "bind": "scales"
+        }
+    ],
+    "title": "Flowing Water Bodies Heat Potential",
+    "transform": [
+        {
+            "calculate": "datum.id",
+            "as": "feature_id"
+        },
+        {
+            "calculate": "datum.name",
+            "as": "feature_name"
+        },
+        {
+            "fold": [
+                "e_2030_high_wocc",
+                "e_2030_low_wocc",
+                "e_2030_medium_wocc",
+                "e_2040_high_wocc",
+                "e_2040_low_wocc",
+                "e_2040_medium_wocc",
+                "e_current",
+                "e_technical_potential",
+                "c_2030_high_wocc",
+                "c_2030_low_wocc",
+                "c_2030_medium_wocc",
+                "c_2040_high_wocc",
+                "c_2040_low_wocc",
+                "c_2040_medium_wocc",
+                "c_current",
+                "c_technical_potential",
+                "mv_2030_high_wocc",
+                "mv_2030_low_wocc",
+                "mv_2030_medium_wocc",
+                "mv_2040_high_wocc",
+                "mv_2040_low_wocc",
+                "mv_2040_medium_wocc",
+                "lcoe_2030_high_wocc",
+                "lcoe_2030_low_wocc",
+                "lcoe_2030_medium_wocc",
+                "lcoe_2040_high_wocc",
+                "lcoe_2040_low_wocc",
+                "lcoe_2040_medium_wocc"
+            ],
+            "as": [
+                "metric",
+                "value"
+            ]
+        },
+        {
+            "filter": "test('^' + prefix + '_', datum.metric)"
+        },
+        {
+            "filter": "test('_' + suffix + '$', datum.metric) || indexof(['c_current','c_technical_potential','e_current','e_technical_potential'], datum.metric) >= 0"
+        },
+        {
+            "calculate": "(datum.metric == 'e_current' || datum.metric == 'c_current' || datum.metric == 'mv_current' || datum.metric == 'lcoe_current') ? 1 :(datum.metric == 'e_technical_potential' || datum.metric == 'c_technical_potential' || datum.metric == 'mv_technical_potential' || datum.metric == 'lcoe_technical_potential') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2030 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2040 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
+            "as": "sort_index"
+        }
+    ],
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "x": {
+            "field": "metric",
+            "type": "nominal",
+            "sort": {
+                "field": "sort_index",
+                "order": "ascending"
+            },
+            "axis": {
+                "labelAngle": -45,
+                "title": "",
+                "labelExpr": "replace(replace(replace(replace(replace(replace(replace(replace(datum.label,'e_', ''), 'mv_', ''), 'c_', ''),'lcoe_', ''),'_wocc',''),'technical_potential','Technical potential'),'technical_potential','current', 'current'),'_',' ')"
+            }
+        },
+        "xOffset": {
+            "field": "feature_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative",
+            "axis": {
+                "title": "value"
+            }
+        },
+        "color": {
+            "field": "feature_name",
+            "type": "nominal",
+            "title": "Municipality",
+            "sort": null,
+            "scale": {
+                "range": [
+                    "#1f77b4",
+                    "#ff7f0e",
+                    "#2ca02c",
+                    "#d62728",
+                    "#9467bd",
+                    "#8c564b",
+                    "#e377c2",
+                    "#7f7f7f",
+                    "#bcbd22",
+                    "#17becf"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "feature_name"
+            },
+            {
+                "field": "metric"
+            },
+            {
+                "field": "value",
+                "type": "quantitative",
+                "format": ".1f"
+            }
+        ]
+    },
+    "background": "transparent"
+}
