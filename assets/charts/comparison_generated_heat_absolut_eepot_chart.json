@@ -1,0 +1,205 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "data": {
+        "name": "heat_sources_absolut_chart"
+    },
+    "params": [
+        {
+            "name": "year",
+            "value": "2030",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "current",
+                    "2030",
+                    "2040",
+                    "technical_potential"
+                ],
+                "labels": [
+                    "Current",
+                    "2030",
+                    "2040",
+                    "Technical Potential"
+                ],
+                "name": "Year: "
+            }
+        },
+        {
+            "name": "scenario",
+            "value": "medium",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "low",
+                    "medium",
+                    "high"
+                ],
+                "labels": [
+                    "Low",
+                    "Medium",
+                    "High"
+                ],
+                "name": "Scenario: "
+            }
+        },
+        {
+            "name": "grid",
+            "select": "interval",
+            "bind": "scales"
+        }
+    ],
+    "title": "Heat Sources Energy Comparison [GWh] Absolut",
+    "transform": [
+        {
+            "calculate": "datum.id",
+            "as": "feature_id"
+        },
+        {
+            "fold": [
+                "E_current_air",
+                "E_2030_low_wocc_air",
+                "E_2030_medium_wocc_air",
+                "E_2030_high_wocc_air",
+                "E_2040_low_wocc_air",
+                "E_2040_medium_wocc_air",
+                "E_2040_high_wocc_air",
+                "E_technical_potential_air",
+                "E_current_aquifer",
+                "E_2030_low_wocc_aquifer",
+                "E_2030_medium_wocc_aquifer",
+                "E_2030_high_wocc_aquifer",
+                "E_2040_low_wocc_aquifer",
+                "E_2040_medium_wocc_aquifer",
+                "E_2040_high_wocc_aquifer",
+                "E_technical_potential_aquifer",
+                "E_current_closed_systems",
+                "E_2030_low_wocc_closed_systems",
+                "E_2030_medium_wocc_closed_systems",
+                "E_2030_high_wocc_closed_systems",
+                "E_2040_low_wocc_closed_systems",
+                "E_2040_medium_wocc_closed_systems",
+                "E_2040_high_wocc_closed_systems",
+                "E_technical_potential_closed_systems",
+                "E_current_solarthermal_building",
+                "E_2030_low_wocc_solarthermal_building",
+                "E_2030_medium_wocc_solarthermal_building",
+                "E_2030_high_wocc_solarthermal_building",
+                "E_2040_low_wocc_solarthermal_building",
+                "E_2040_medium_wocc_solarthermal_building",
+                "E_2040_high_wocc_solarthermal_building",
+                "E_technical_potential_solarthermal_building",
+                "E_current_solarthermal_ground mounted",
+                "E_2030_low_wocc_solarthermal_ground mounted",
+                "E_2030_medium_wocc_solarthermal_ground mounted",
+                "E_2030_high_wocc_solarthermal_ground mounted",
+                "E_2040_low_wocc_solarthermal_ground mounted",
+                "E_2040_medium_wocc_solarthermal_ground mounted",
+                "E_2040_high_wocc_solarthermal_ground mounted",
+                "E_technical_potential_solarthermal_ground mounted",
+                "E_current_aquathermal",
+                "E_2030_low_wocc_aquathermal",
+                "E_2030_medium_wocc_aquathermal",
+                "E_2030_high_wocc_aquathermal",
+                "E_2040_low_wocc_aquathermal",
+                "E_2040_medium_wocc_aquathermal",
+                "E_2040_high_wocc_aquathermal",
+                "E_technical_potential_aquathermal",
+                "E_current_excess heat_hp",
+                "E_2030_low_wocc_excess heat_hp",
+                "E_2030_medium_wocc_excess heat_hp",
+                "E_2030_high_wocc_excess heat_hp",
+                "E_2040_low_wocc_excess heat_hp",
+                "E_2040_medium_wocc_excess heat_hp",
+                "E_2040_high_wocc_excess heat_hp",
+                "E_technical_potential_excess heat_hp",
+                "E_current_excess heat_dir",
+                "E_2030_low_wocc_excess heat_dir",
+                "E_2030_medium_wocc_excess heat_dir",
+                "E_2030_high_wocc_excess heat_dir",
+                "E_2040_low_wocc_excess heat_dir",
+                "E_2040_medium_wocc_excess heat_dir",
+                "E_2040_high_wocc_excess heat_dir",
+                "E_technical_potential_excess heat_dir"
+            ],
+            "as": [
+                "metric",
+                "value"
+            ]
+        },
+        {
+            "calculate": "split(datum.metric, '_')[1]",
+            "as": "year_part"
+        },
+        {
+            "calculate": "split(datum.metric, '_')[2]",
+            "as": "scenario_part"
+        },
+        {
+            "calculate": "indexof(datum.metric, '_air') > 0 ? 'Air' : indexof(datum.metric, '_aquifer') > 0 ? 'Aquifer' : indexof(datum.metric, '_closed_systems') > 0 ? 'Closed Systems' : indexof(datum.metric, '_solarthermal_building') > 0 ? 'Solar Thermal (Building)' : indexof(datum.metric, '_solarthermal_ground') > 0 ? 'Solar Thermal (Ground)' : indexof(datum.metric, '_aquathermal') > 0 ? 'Aquathermal' : indexof(datum.metric, '_excess heat_hp') > 0 ? 'Excess Heat (HP)' : indexof(datum.metric, '_excess heat_dir') > 0 ? 'Excess Heat (Direct)' : 'Unknown'",
+            "as": "heat_source"
+        },
+        {
+            "filter": "(year == 'current' && datum.year_part == 'current') || (year == 'technical_potential' && datum.year_part == 'technical') || (year == '2030' && datum.year_part == '2030' && datum.scenario_part == scenario) || (year == '2040' && datum.year_part == '2040' && datum.scenario_part == scenario)"
+        }
+    ],
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "x": {
+            "field": "heat_source",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": -45,
+                "title": "Heat Source"
+            }
+        },
+        "xOffset": {
+            "field": "feature_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative",
+            "axis": {
+                "title": "Energy [GWh]"
+            }
+        },
+        "color": {
+            "field": "feature_id",
+            "type": "nominal",
+            "title": "Municipality",
+            "scale": {
+                "range": [
+                    "#1f77b4",
+                    "#ff7f0e",
+                    "#2ca02c",
+                    "#d62728",
+                    "#9467bd",
+                    "#8c564b",
+                    "#e377c2",
+                    "#7f7f7f",
+                    "#bcbd22",
+                    "#17becf"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "feature_id",
+                "title": "Municipality"
+            },
+            {
+                "field": "heat_source",
+                "title": "Heat Source"
+            },
+            {
+                "field": "value",
+                "type": "quantitative",
+                "format": ".1f",
+                "title": "Energy [GWh]"
+            }
+        ]
+    },
+    "background": "transparent"
+}
