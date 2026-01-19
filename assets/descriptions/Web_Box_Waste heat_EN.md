@@ -1,4 +1,4 @@
-Potential from Excess Heat
+**Potential from Excess Heat**
 
 Potential from excess heat (direct utilization and utilization via heat pumps) in Austria as technical potential for 2030 and 2040 at the LAU 2 level. 
 
