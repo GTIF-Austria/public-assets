@@ -1,0 +1,151 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "data": {
+        "name": "electricity_sources_share_chart"
+    },
+    "params": [
+        {
+            "name": "period",
+            "value": "2030_medium",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "current",
+                    "2030_low",
+                    "2030_medium",
+                    "2030_high",
+                    "2040_low",
+                    "2040_medium",
+                    "2040_high",
+                    "technical_potential"
+                ],
+                "labels": [
+                    "Current",
+                    "2030 - Low Climate Change",
+                    "2030 - Medium Climate Change",
+                    "2030 - High Climate Change",
+                    "2040 - Low Climate Change",
+                    "2040 - Medium Climate Change",
+                    "2040 - High Climate Change",
+                    "Technical Potential"
+                ],
+                "name": "Scenario:"
+            }
+        },
+        {
+            "name": "grid",
+            "select": "interval",
+            "bind": "scales"
+        }
+    ],
+    "title": "Electricity Sources Energy Comparison [GWh] Share",
+    "transform": [
+        {
+            "calculate": "datum.pb",
+            "as": "feature_name"
+        },
+        {
+            "fold": [
+                "lcoe_current_pv",
+                "lcoe_2030_low_wocc_pv",
+                "lcoe_2030_medium_wocc_pv",
+                "lcoe_2030_high_wocc_pv",
+                "lcoe_2040_low_wocc_pv",
+                "lcoe_2040_medium_wocc_pv",
+                "lcoe_2040_high_wocc_pv",
+                "lcoe_technical_potential_pv",
+                "lcoe_current_wind",
+                "lcoe_2030_low_wocc_wind",
+                "lcoe_2030_medium_wocc_wind",
+                "lcoe_2030_high_wocc_wind",
+                "lcoe_2040_low_wocc_wind",
+                "lcoe_2040_medium_wocc_wind",
+                "lcoe_2040_high_wocc_wind",
+                "lcoe_technical_potential_wind"
+            ],
+            "as": [
+                "metric",
+                "value"
+            ]
+        },
+        {
+            "filter": "period == 'current' ? indexof(datum.metric, 'lcoe_current_') == 0 : period == 'technical_potential' ? indexof(datum.metric, 'lcoe_technical_potential_') == 0 : indexof(datum.metric, 'lcoe_' + period) == 0"
+        },
+        {
+            "calculate": "replace(datum.metric, /^lcoe_/, '')",
+            "as": "metric_no_e"
+        },
+        {
+            "calculate": "split(datum.metric_no_e, '_')[length(split(datum.metric_no_e, '_')) - 1]",
+            "as": "metric_source_raw"
+        },
+        {
+            "calculate": "replace(datum.metric_source_raw, /_/g, ' ')",
+            "as": "heat_source_label"
+        },
+        {
+            "calculate": "upper(substring(datum.heat_source_label,0,1)) + substring(datum.heat_source_label,1)",
+            "as": "heat_source_label_upper"
+        }
+    ],
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "x": {
+            "field": "heat_source_label_upper",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": -45,
+                "title": ""
+            }
+        },
+        "xOffset": {
+            "field": "feature_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative",
+            "axis": {
+                "title": "Energy [GWh]"
+            }
+        },
+        "color": {
+            "field": "feature_name",
+            "type": "nominal",
+            "title": "Municipality",
+            "scale": {
+                "range": [
+                    "#1f77b4",
+                    "#ff7f0e",
+                    "#2ca02c",
+                    "#d62728",
+                    "#9467bd",
+                    "#8c564b",
+                    "#e377c2",
+                    "#7f7f7f",
+                    "#bcbd22",
+                    "#17becf"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "feature_name",
+                "title": "Municipality"
+            },
+            {
+                "field": "heat_source_label_upper",
+                "title": "Heat Source"
+            },
+            {
+                "field": "value",
+                "type": "quantitative",
+                "format": ".1f",
+                "title": "Energy [GWh]"
+            }
+        ]
+    },
+    "background": "transparent"
+}
