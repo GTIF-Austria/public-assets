@@ -1,4 +1,4 @@
-Ambient Heat Potential from Ground-Source Heat Pumps
+**Ambient Heat Potential from Ground-Source Heat Pumps**
 
 Ambient heat potential from ground-source heat pumps (open- and closed-systems) in Austria for current status (2023), future projection (2030 & 2040\) and the technical potential at LAU 2 level.
 
