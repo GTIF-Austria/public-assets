@@ -12,5 +12,5 @@ The map includes **potentials without considering climate change effects** (WOCC
 
 [download raw absolut compare data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/comparison/comparison_generated_heat_absolut_EEPOT_W23.geojson)
    
-[download raw absolut share data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/comparison/comparison_generated_heat_share_EEPOT_W23.geojson)
+[download raw share compare data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/comparison/comparison_generated_heat_share_EEPOT_W23.geojson)
     

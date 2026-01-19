@@ -15,3 +15,15 @@ Realisable potentials for 2030 and 2040 as well as other parameter are provided 
 
 The map includes **potentials without considering climate change effects** (WOCC).
 
+
+[download raw absolut electricity data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_electricity/comparison_electricity_e_absolute_EEPOT_W23.geojson)
+    
+
+[download raw share electricity data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_electricity/comparison_electricity_e_share_EEPOT_W23.geojson)
+    
+
+[download raw MV electricity data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_electricity/comparison_electricity_mv_EEPOT_W23.geojson)
+    
+
+[download raw LCOE electricity data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_electricity/comparison_electricity_lcoe_EEPOT_W23.geojson)
+     
