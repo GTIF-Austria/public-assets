@@ -40,7 +40,6 @@
   ],
   "title": "Heat Sources Energy Comparison [GWh] Share",
   "transform": [
-    
     { "calculate": "datum.name", "as": "feature_name" },
     {
       "fold": [
@@ -119,7 +118,15 @@
       "filter": "period == 'current' ? indexof(datum.metric, 'e_current_') == 0 : period == 'technical_potential' ? indexof(datum.metric, 'e_technical_potential_') == 0 : indexof(datum.metric, 'e_' + period) == 0"
     },
     {
-      "calculate": "replace(replace(datum.metric, period == 'current' ? 'e_current_' : period == 'e_technical_potential' ? '^e_technical_potential_' : '^e_' + period + '_wocc_', ''), '_', ' ')",
+      "calculate": "replace(datum.metric, /^E_/, '')",
+      "as": "metric_no_e"
+    },
+    {
+      "calculate": "join(slice(split(datum.metric_no_e, '_'), indexof(split(datum.metric_no_e, '_'), 'air') >= 0 ? indexof(split(datum.metric, '_'), 'air') : indexof(split(datum.metric, '_'), 'aquifer') >= 0 ? indexof(split(datum.metric, '_'), 'aquifer') : indexof(split(datum.metric, '_'), 'closed') >= 0 ? indexof(split(datum.metric, '_'), 'closed') : indexof(split(datum.metric, '_'), 'solarthermal') >= 0 ? indexof(split(datum.metric, '_'), 'solarthermal') : indexof(split(datum.metric, '_'), 'aquathermal') >= 0 ? indexof(split(datum.metric, '_'), 'aquathermal') : indexof(split(datum.metric, '_'), 'excess') >= 0 ? indexof(split(datum.metric, '_'), 'excess') : 0), '_')",
+      "as": "metric_source_raw"
+    },
+    {
+      "calculate": "replace(datum.metric_source_raw, /_/g, ' ')",
       "as": "heat_source_label"
     },
     {
