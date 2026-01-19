@@ -15,3 +15,6 @@ Realizable potential for 2030 and 2040 are provided with defined ranges: ***Low*
 
 The map includes potentials without considering climate change effects (WOCC).
 
+[download raw aquifer data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/aquifer/aquifer_EEPOT_W23_woCC.geojson)
+
+[download raw closed systems data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/closed_systems/closed_systems_EEPOT_W23_woCC.geojson)
