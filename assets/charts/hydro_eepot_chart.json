@@ -123,7 +123,7 @@
             "filter": "test('_' + suffix + '$', datum.metric) || indexof(['c_current','c_technical_potential','e_current','e_technical_potential'], datum.metric) >= 0"
         },
         {
-            "calculate": "(datum.metric == 'e_current' || datum.metric == 'c_current' || datum.metric == 'mv_current' || datum.metric == 'lcoe_current') ? 1 :(datum.metric == 'e_technical_potential' || datum.metric == 'c_technical_potential' || datum.metric == 'mv_technical_potential' || datum.metric == 'lcoe_technical_potential') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2070 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2040 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
+            "calculate": "(datum.metric == 'e_current' || datum.metric == 'c_current' || datum.metric == 'mv_current' || datum.metric == 'lcoe_current') ? 1 :(datum.metric == 'e_technical_potential' || datum.metric == 'c_technical_potential' || datum.metric == 'mv_technical_potential' || datum.metric == 'lcoe_technical_potential') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2040 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2070 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
             "as": "sort_index"
         }
     ],
