@@ -12,7 +12,7 @@
                 "drawtools": {
                     "for": "eox-map#main",
                     "layerId": "comparison_electricity_mv_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Comparison Electricity - MV;:;EPSG:3857",
-                    "featureNameKey": "name",
+                    "featureNameKey": "pb",
                     "featureStyles": {
                         "click": {
                             "fill-color": "rgba(51, 153, 204,0.5)",

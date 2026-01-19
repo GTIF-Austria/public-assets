@@ -10,24 +10,20 @@
             "bind": {
                 "input": "select",
                 "options": [
-                    "current",
                     "2030_low",
                     "2030_medium",
                     "2030_high",
                     "2040_low",
                     "2040_medium",
-                    "2040_high",
-                    "technical_potential"
+                    "2040_high"
                 ],
                 "labels": [
-                    "Current",
                     "2030 - Low Climate Change",
                     "2030 - Medium Climate Change",
                     "2030 - High Climate Change",
                     "2040 - Low Climate Change",
                     "2040 - Medium Climate Change",
-                    "2040 - High Climate Change",
-                    "Technical Potential"
+                    "2040 - High Climate Change"
                 ],
                 "name": "Scenario:"
             }
@@ -46,22 +42,18 @@
         },
         {
             "fold": [
-                "lcoe_current_pv",
                 "lcoe_2030_low_wocc_pv",
                 "lcoe_2030_medium_wocc_pv",
                 "lcoe_2030_high_wocc_pv",
                 "lcoe_2040_low_wocc_pv",
                 "lcoe_2040_medium_wocc_pv",
                 "lcoe_2040_high_wocc_pv",
-                "lcoe_technical_potential_pv",
-                "lcoe_current_wind",
                 "lcoe_2030_low_wocc_wind",
                 "lcoe_2030_medium_wocc_wind",
                 "lcoe_2030_high_wocc_wind",
                 "lcoe_2040_low_wocc_wind",
                 "lcoe_2040_medium_wocc_wind",
-                "lcoe_2040_high_wocc_wind",
-                "lcoe_technical_potential_wind"
+                "lcoe_2040_high_wocc_wind"
             ],
             "as": [
                 "metric",
