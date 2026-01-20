@@ -38,7 +38,7 @@
             "as": "source_raw"
         },
         {
-            "calculate": "source_raw == 'pv' ? 'PV' : upper(substring(source_raw,0,1)) + substring(source_raw,1)",
+            "calculate": "datum.source_raw == 'pv' ? 'PV' : upper(substring(datum.source_raw,0,1)) + substring(datum.source_raw,1)",
             "as": "source_label"
         },
         {
