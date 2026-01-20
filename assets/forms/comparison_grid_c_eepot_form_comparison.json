@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "comparison_grid_c_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Comparison Grid - Capacity;:;EPSG:3857",
+                    "layerId": "comparison_grid_c_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Grid Capacity and Electricity Potential in Capacity Terms;:;EPSG:3857",
                     "featureNameKey": "id",
                     "featureStyles": {
                         "click": {
