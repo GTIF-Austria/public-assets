@@ -12,7 +12,7 @@ The map contains information on the following parameters:
 
 The map includes **potentials without considering climate change effects** (WOCC).
 
-Link: Comparison Grid-Potentials Data
+The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
 
 [download raw C Grid compare data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_grid_potentials/comparison_grid_c_EEPOT_W23.geojson)
 

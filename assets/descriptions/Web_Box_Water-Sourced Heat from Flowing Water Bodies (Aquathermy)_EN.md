@@ -14,5 +14,7 @@ Technical potential for 2030 and 2040 are provided with defined ranges: ***Low**
 
 The map includes potentials without considering climate change effects (WOCC). 
 
+The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
+
 [download raw data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/hydro/hydro_EEPOT_W23.geojson)
 

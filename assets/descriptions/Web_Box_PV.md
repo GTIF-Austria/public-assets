@@ -15,6 +15,8 @@ Realisable potential for 2030 and 2040 are provided with defined ranges: ***Low*
 
 The map includes **potentials without the effects of climate change (WOCC)**, with **moderate climate change (RCP4.5 \- MOCC)** and **strong climate change effects (RCP8.5 – STCC)**.
 
+The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
+
 [download raw building-integrated data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/pv/pv_buildings/pv_buildings_EEPOT_W23.geojson)
   
 [download raw ground-mounted sealed data](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/pv/pv_ground_mounted_sealed/pv_ground_mounted_sealed_EEPOT_W23.geojson)

@@ -8,3 +8,4 @@ The map contains information on the annual amount of produced biomethane (**Ener
 
 The data includes **potentials without the effects of climate change (WOCC)**.
 
+The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
