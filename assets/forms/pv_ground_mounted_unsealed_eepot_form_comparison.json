@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "pv_ground_mounted_unsealed_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Ground-mounted unsealed PV potential;:;EPSG:3857",
+                    "layerId": "pv_ground_mounted_unsealed_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Ground-Mounted PV Systems on Unsealed Land;:;EPSG:3857",
                     "featureNameKey": "name",
                     "featureStyles": {
                         "click": {
