@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "hydro_eepot_w23;:;2030-01-01T00:00:00Z;:;Hydro Energy;:;EPSG:3857",
+                    "layerId": "hydro_eepot_w23;:;2030-01-01T00:00:00Z;:;Hydropower;:;EPSG:3857",
                     "featureNameKey": "abschnitt",
                     "featureStyles": {
                         "click": {
