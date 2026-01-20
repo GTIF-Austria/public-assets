@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "comparison_electricity_e_share_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Comparison Electricity - E Share;:;EPSG:3857",
+                    "layerId": "comparison_electricity_e_share_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Electricity Demand Share;:;EPSG:3857",
                     "featureNameKey": "pb",
                     "featureStyles": {
                         "click": {
