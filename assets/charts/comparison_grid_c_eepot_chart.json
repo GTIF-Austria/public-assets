@@ -1,121 +1,142 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-    "data": {
-        "name": "grid_c_capacity_chart"
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "name": "grid_c_capacity_chart"
+  },
+  "params": [
+    {
+      "name": "mode",
+      "value": "capacity",
+      "bind": {
+        "input": "select",
+        "options": ["capacity", "grid"],
+        "labels": ["Capacity [MW]", "Grid Capacity [MVA]"],
+        "name": "Metric: "
+      }
     },
-    "title": "Capacity Comparison C [MW]",
-    "transform": [
-        {
-            "calculate": "datum.substation_id",
-            "as": "feature_name"
-        },
-        {
-            "fold": [
-                "c_current_pv",
-                "c_2030_low_wocc_pv",
-                "c_2030_medium_wocc_pv",
-                "c_2030_high_wocc_pv",
-                "c_2040_low_wocc_pv",
-                "c_2040_medium_wocc_pv",
-                "c_2040_high_wocc_pv",
-                "c_technical_potential_pv",
-                "c_current_wind",
-                "c_2030_low_wocc_wind",
-                "c_2030_medium_wocc_wind",
-                "c_2030_high_wocc_wind",
-                "c_2040_low_wocc_wind",
-                "c_2040_medium_wocc_wind",
-                "c_2040_high_wocc_wind",
-                "c_technical_potential_wind"
-            ],
-            "as": [
-                "metric",
-                "value"
-            ]
-        },
-        {
-            "calculate": "split(datum.metric, '_')[length(split(datum.metric, '_')) - 1]",
-            "as": "source_raw"
-        },
-        {
-            "calculate": "datum.source_raw == 'pv' ? 'PV' : upper(substring(datum.source_raw,0,1)) + substring(datum.source_raw,1)",
-            "as": "source_label"
-        },
-        {
-            "calculate": "indexof(datum.metric, 'c_current_') == 0 ? 'Current' : indexof(datum.metric, 'c_technical_potential_') == 0 ? 'Technical potential' : indexof(datum.metric, 'c_2030_low_') == 0 ? '2030 low' : indexof(datum.metric, 'c_2030_medium_') == 0 ? '2030 medium' : indexof(datum.metric, 'c_2030_high_') == 0 ? '2030 high' : indexof(datum.metric, 'c_2040_low_') == 0 ? '2040 low' : indexof(datum.metric, 'c_2040_medium_') == 0 ? '2040 medium' : indexof(datum.metric, 'c_2040_high_') == 0 ? '2040 high' : 'Other'",
-            "as": "scenario_label"
-        },
-        {
-            "calculate": "indexof(datum.metric, 'c_current_') == 0 ? 0 : indexof(datum.metric, 'c_2030_low_') == 0 ? 1 : indexof(datum.metric, 'c_2030_medium_') == 0 ? 2 : indexof(datum.metric, 'c_2030_high_') == 0 ? 3 : indexof(datum.metric, 'c_2040_low_') == 0 ? 4 : indexof(datum.metric, 'c_2040_medium_') == 0 ? 5 : indexof(datum.metric, 'c_2040_high_') == 0 ? 6 : indexof(datum.metric, 'c_technical_potential_') == 0 ? 7 : 99",
-            "as": "scenario_order"
-        }
-    ],
-    "mark": {
-        "type": "bar"
+    {
+      "name": "grid",
+      "select": "interval",
+      "bind": "scales"
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.name + ' station ' + datum.substation_id",
+      "as": "feature_name"
     },
-    "encoding": {
-        "x": {
-            "field": "source_label",
-            "type": "nominal",
-            "axis": {
-                "title": "",
-                "labelAngle": 0
-            }
-        },
-        "xOffset": {
-            "field": "scenario_label",
-            "type": "nominal",
-            "sort": {
-                "field": "scenario_order",
-                "order": "ascending"
-            }
-        },
-        "y": {
-            "field": "value",
-            "type": "quantitative",
-            "axis": {
-                "title": "Capacity [MW]"
-            }
-        },
-        "color": {
-            "field": "feature_name",
-            "type": "nominal",
-            "title": "Municipality",
-            "scale": {
-                "range": [
-                    "#1f77b4",
-                    "#ff7f0e",
-                    "#2ca02c",
-                    "#d62728",
-                    "#9467bd",
-                    "#8c564b",
-                    "#e377c2",
-                    "#7f7f7f",
-                    "#bcbd22",
-                    "#17becf"
-                ]
-            }
-        },
-        "tooltip": [
-            {
-                "field": "feature_name",
-                "title": "Municipality"
-            },
-            {
-                "field": "source_label",
-                "title": "Source"
-            },
-            {
-                "field": "scenario_label",
-                "title": "Scenario"
-            },
-            {
-                "field": "value",
-                "type": "quantitative",
-                "format": ".2f",
-                "title": "Capacity [MW]"
-            }
-        ]
+    {
+      "fold": [
+        "booked_grid_capcity_in_mva",
+        "free_grid_capacity_in_mva",
+        "c_current_pv",
+        "c_2030_low_wocc_pv",
+        "c_2030_medium_wocc_pv",
+        "c_2030_high_wocc_pv",
+        "c_2040_low_wocc_pv",
+        "c_2040_medium_wocc_pv",
+        "c_2040_high_wocc_pv",
+        "c_technical_potential_pv",
+        "c_current_wind",
+        "c_2030_low_wocc_wind",
+        "c_2030_medium_wocc_wind",
+        "c_2030_high_wocc_wind",
+        "c_2040_low_wocc_wind",
+        "c_2040_medium_wocc_wind",
+        "c_2040_high_wocc_wind",
+        "c_technical_potential_wind"
+      ],
+      "as": ["metric", "value"]
     },
-    "background": "transparent"
+    {
+      "filter": "(mode == 'capacity' && indexof(datum.metric, 'c_') == 0) || (mode == 'grid' && indexof(datum.metric, '_grid_') > -1)"
+    },
+    {
+      "calculate": "split(datum.metric, '_')[length(split(datum.metric, '_')) - 1]",
+      "as": "source_raw"
+    },
+    {
+      "calculate": "datum.source_raw == 'pv' ? 'PV' : datum.source_raw == 'wind' ? 'Wind' : datum.source_raw == 'mva' ? 'GC' : ''",
+      "as": "source_label"
+    },
+    {
+      "calculate": "indexof(datum.metric, 'c_current_') == 0 ? 'Current' : indexof(datum.metric, 'booked_grid') == 0 ? 'Booked Grid Capacity' : indexof(datum.metric, 'free_grid') == 0 ? 'Free Grid Capacity' : indexof(datum.metric, 'c_technical_potential_') == 0 ? 'Technical potential' : indexof(datum.metric, 'c_2030_low_') == 0 ? '2030 low' : indexof(datum.metric, 'c_2030_medium_') == 0 ? '2030 medium' : indexof(datum.metric, 'c_2030_high_') == 0 ? '2030 high' : indexof(datum.metric, 'c_2040_low_') == 0 ? '2040 low' : indexof(datum.metric, 'c_2040_medium_') == 0 ? '2040 medium' : indexof(datum.metric, 'c_2040_high_') == 0 ? '2040 high' : 'Other'",
+      "as": "scenario_label"
+    },
+    {
+      "calculate": "datum.scenario_label == 'Free Grid Capacity' ? 0 : datum.scenario_label == 'Booked Grid Capacity' ? 1 : datum.source_label == 'Wind' ? 2 : datum.source_label == 'PV' ? 3 : 99",
+      "as": "source_order"
+    },
+    {
+      "calculate": "indexof(datum.metric, 'c_current_') == 0 ? 0 : indexof(datum.metric, 'c_2030_low_') == 0 ? 1 : indexof(datum.metric, 'c_2030_medium_') == 0 ? 2 : indexof(datum.metric, 'c_2030_high_') == 0 ? 3 : indexof(datum.metric, 'c_2040_low_') == 0 ? 4 : indexof(datum.metric, 'c_2040_medium_') == 0 ? 5 : indexof(datum.metric, 'c_2040_high_') == 0 ? 6 : indexof(datum.metric, 'c_technical_potential_') == 0 ? 7 : 99",
+      "as": "scenario_order"
+    },
+    {
+      "calculate": "datum.source_order * 10000000 + datum.scenario_order * 10000 + datum.substation_id",
+      "as": "x_sort_order"
+    },
+    {
+      "calculate": "datum.scenario_order + '_' + datum.source_label + '_' + datum.scenario_label + '_' + datum.substation_id",
+      "as": "x_key"
+    },
+    {
+      "calculate": "datum.source_label + ' ' + datum.scenario_label",
+      "as": "x_label"
+    },
+
+    {
+      "calculate": "datum.x_key + '||' + datum.x_label",
+      "as": "x_encoded"
+    },
+    {
+      "calculate": "mode == 'capacity' ? format(datum.value, '.2f') + ' MW' : format(datum.value, '.2f') + ' MVA'",
+      "as": "value_label"
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "mark": {
+    "type": "bar",
+    "size": 10
+  },
+  "encoding": {
+    "x": {
+      "field": "x_encoded",
+      "type": "nominal",
+      "axis": {
+        "title": "",
+        "labelAngle": -45,
+        "labelExpr": "split(datum.value, '||')[1]"
+      },
+      "sort": {
+        "field": "x_sort_order",
+        "order": "ascending"
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": { "title": "" }
+    },
+    "color": {
+      "field": "feature_name",
+      "type": "nominal",
+      "title": "Grid"
+    },
+
+    "tooltip": [
+      { "field": "feature_name", "title": "Municipality" },
+      { "field": "source_label", "title": "Source" },
+      { "field": "scenario_label", "title": "Scenario" },
+      {
+        "field": "value_label",
+        "type": "nominal",
+        "title": "Value: "
+      }
+    ]
+  },
+  "background": "transparent"
 }
