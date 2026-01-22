@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "wind_eepot_w23",
+                    "layerId": "wind_eepot_w23;:;2030-01-01T00:00:00Z;:;Wind Power;:;EPSG:3857",
                     "featureNameKey": "pb",
                     "featureStyles": {
                         "click": {

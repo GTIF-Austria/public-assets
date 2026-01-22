@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "comparison_electricity_mv_eepot_w23_wocc",
+                    "layerId": "comparison_electricity_mv_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Market Value;:;EPSG:3857",
                     "featureNameKey": "pb",
                     "featureStyles": {
                         "click": {
