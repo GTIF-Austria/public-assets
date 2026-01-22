@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "pv_buildings_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Building-Integrated PV Systems;:;EPSG:3857",
+                    "layerId": "pv_buildings_eepot_w23_wocc",
                     "featureNameKey": "name",
                     "featureStyles": {
                         "click": {

@@ -10,7 +10,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "predictive_maintenance;:;2025-01-01T00:00:00Z;:;0",
+                    "layerId": "predictive_maintenance",
                     "continuous": true,
                     "featureStyles" :{
                         "click": {

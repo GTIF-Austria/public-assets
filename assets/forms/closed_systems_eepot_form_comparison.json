@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "closed_systems_eepot_w23_wocc;:;2030-01-01T00:00:00Z;:;Ground Source Heat Pump: Closed Systems (Collectors, Probes);:;EPSG:3857",
+                    "layerId": "closed_systems_eepot_w23_wocc",
                     "featureNameKey": "name",
                     "featureStyles": {
                         "click": {
