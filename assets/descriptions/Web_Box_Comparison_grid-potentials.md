@@ -20,4 +20,4 @@ The underlying study, “Renewable Energy Potentials in Austria for 2030 and 204
 
 [download raw E Grid compare data as GeoJSON](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_grid_potentials/comparison_grid_e_EEPOT_W23.geojson)
 
-[download raw E Grid compare data as CSV](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_grid_potentials/E_Comparison_Grid_PV-Wind-Potentials.csv)
+[download raw E Grid compare data as CSV](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/comparison_grid_potentials/E_Comparison_Grid_PV-Wind-Potentials(in).csv)
