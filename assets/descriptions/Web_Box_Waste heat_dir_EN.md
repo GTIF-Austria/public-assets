@@ -1,10 +1,10 @@
 **Potential from Excess Heat**
 
-Potential from excess heat (utilization via heat pumps) in Austria as technical potential for 2030 and 2040 at the LAU 2 level. 
+Potential from excess heat (direct utilization) in Austria as technical potential for 2030 and 2040 at the LAU 2 level. 
 
 The map contains information on following parameters: 
 
-* **Energy (E):** Annual excess heat supplied directly to heating systems - annual excess heat supplied to heat pumps, in GWh per year  
+* **Energy (E):** Annual excess heat supplied directly to heating systems (direct utilization) in GWh per year  
 * **Capacity (C):** Installed heating capacity of heat pumps, in MWth  
 * **Market Value (MV)**: Reference costs of the technology in EUR per MWhth
 
@@ -16,6 +16,6 @@ The map includes potentials without considering climate change effects (WOCC).
 
 The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
 
-[download raw excess heat - utilization via heat pumps data as GeoJSON](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/excess_heat/excess_heat_hp_EEPOT_W23.geojson)
+[download raw excess heat - direct utilization data as GeoJSON](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/excess_heat/excess_heat_dir_EEPOT_W23.geojson)
 
-[download raw excess heat - utilization via heat pumps data as CSV](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/excess_heat/excess_heat_hp_EEPOT_W23_woCC.csv)
+[download raw excess heat - direct utilization data as CSV](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/excess_heat/excess_heat_dir_EEPOT_W23_woCC.csv)

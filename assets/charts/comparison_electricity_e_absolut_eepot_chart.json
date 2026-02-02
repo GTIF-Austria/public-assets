@@ -38,7 +38,7 @@
             "bind": "scales"
         }
     ],
-    "title": "Electricity Sources Energy Comparison [GWh] Absolut",
+    "title": "Electricity Sources Energy Comparison Absolut",
     "transform": [
         {
             "calculate": "datum.pb",

@@ -34,7 +34,7 @@
     },
     { "name": "grid", "select": "interval", "bind": "scales" }
   ],
-  "title": "Heat Sources Energy Comparison [GWh] Absolut",
+  "title": "Heat Sources Energy Comparison Absolut",
   "transform": [
     { "calculate": "datum.name", "as": "feature_name" },
     {

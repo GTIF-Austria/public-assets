@@ -38,7 +38,7 @@
       "bind": "scales"
     }
   ],
-  "title": "Heat Sources Energy Comparison [GWh] Share",
+  "title": "Heat Sources Energy Comparison Share",
   "transform": [
     { "calculate": "datum.name", "as": "feature_name" },
     {

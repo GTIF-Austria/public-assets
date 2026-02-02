@@ -34,7 +34,7 @@
             "bind": "scales"
         }
     ],
-    "title": "Electricity Sources Energy Comparison [GWh] Share",
+    "title": "Electricity Sources Energy Comparison Share",
     "transform": [
         {
             "calculate": "datum.pb",
