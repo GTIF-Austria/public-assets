@@ -145,7 +145,7 @@
     "y": {
       "field": "value",
       "type": "quantitative",
-      "axis": { "title": "Energy [GWh]" }
+      "axis": { "title": "Energy Share" }
     },
     "color": {
       "field": "feature_name",
@@ -173,7 +173,7 @@
         "field": "value",
         "type": "quantitative",
         "format": ".1f",
-        "title": "Energy [GWh]"
+        "title": "Energy Share"
       }
     ]
   },
