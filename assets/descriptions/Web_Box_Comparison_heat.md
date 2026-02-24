@@ -12,6 +12,8 @@ The map includes **potentials without considering climate change effects** (WOCC
 
 The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
 
+Note: Biomass is an important heat source in Austria; however, due to its high mobility and flexible supply chains, it cannot be accurately allocated to individual municipalities. Therefore, biomass is not represented as a spatially resolved potential at the LAU 2 level.
+
 [download raw absolut compare data as GeoJSON](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/comparison/comparison_generated_heat_absolut_EEPOT_W23.geojson)
 
 [download raw absolut compare data as CSV](https://workspace-ui-public.gtif-austria.hub-otc.eox.at/api/public/share/public-4wazei3y-02/KLIEN-studie/ambient/comparison/EEPOT_W23_generated%20heat_absolut.csv)
