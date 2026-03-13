@@ -9,3 +9,8 @@ The map contains information on the annual amount of produced biomethane (**Ener
 The data includes **potentials without the effects of climate change (WOCC)**.
 
 The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
+
+**Please cite the source when using these data:**
+G. Resch, B. Mayr, B., Gahleitner, E. Haslinger, S. Böhmer, M. B. Broer, C. Brendle, G. Eisenkölb, S. Nemetz, C. Elser-Amann, A. Storch, D. Trauner, P. Weiss, R. Wasserbauer, A. Stökl, A. Krenn, F. Mauthner, W. Gruber-Glatzl, J. Pfleger, A. Stöger, L. Kranzl, F. Radosits, F. Schipfer, P. Valent, 2026. Erneuerbare Energiepotenziale in Österreich für 2030 und 2040.
+
+License: Released under the CC BY 4.0 licence.
