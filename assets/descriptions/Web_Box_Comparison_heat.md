@@ -10,7 +10,7 @@ Realizable potential for 2030 and 2040 are provided with defined ranges: ***Low*
 
 The map includes **potentials without considering climate change effects** (WOCC).
 
-The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
+The underlying study, “Renewable Energy Potentials in Austria for 2030 and 2040,” was conducted on behalf of the Austrian Climate and Energy Fund and was financed with appropriations from the former Federal Ministry for Climate Action, Environment, Energy, Mobility, Innovation and Technology (BMK).
 
 Note: Biomass is an important heat source in Austria; however, due to its high mobility and flexible supply chains, it cannot be accurately allocated to individual municipalities. Therefore, biomass is not represented as a spatially resolved potential at the LAU 2 level.
 
