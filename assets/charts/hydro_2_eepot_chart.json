@@ -1,0 +1,223 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "data": {
+        "name": "hydro_eepot_chart"
+    },
+    "params": [
+        {
+            "name": "prefix",
+            "value": "e",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "e",
+                    "c",
+                    "mv",
+                    "lcoe"
+                ],
+                "labels": [
+                    "Energy [GWh]",
+                    "Capacity [MW]",
+                    "Market Value [€/MWh]",
+                    "Levelized Cost of Energy [€/MWh]"
+                ],
+                "name": "Metric: "
+            }
+        },
+        {
+            "name": "suffix",
+            "value": "mocc",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "wocc",
+                    "mocc",
+                    "stcc"
+                ],
+                "labels": [
+                    "Without climate change",
+                    "Medium Climate Change",
+                    "Strong climate Change"
+                ],
+                "name": "Climate Change:"
+            }
+        },
+        {
+            "name": "grid",
+            "select": "interval",
+            "bind": "scales"
+        }
+    ],
+    "title": "Hydro Energy",
+    "transform": [
+        {
+            "calculate": "datum.id",
+            "as": "feature_id"
+        },
+        {
+            "calculate": "datum.abschnitt",
+            "as": "feature_name"
+        },
+        {
+            "fold": [
+                "e_2030_wocc",
+                "e_2030_wocc",
+                "e_2030_wocc",
+                "e_2040_wocc",
+                "e_2040_wocc",
+                "e_2040_wocc",
+                "e_current",
+                "e_current_optimisation",
+                "c_2030_wocc",
+                "c_2030_wocc",
+                "c_2030_wocc",
+                "c_2040_wocc",
+                "c_2040_wocc",
+                "c_2040_wocc",
+                "c_current",
+                "c_current_optimisation",
+                "mv_current",
+                "mv_current_optimisation",
+                "mv_2030_wocc",
+                "mv_2030_wocc",
+                "mv_2030_wocc",
+                "mv_2040_wocc",
+                "mv_2040_wocc",
+                "mv_2040_wocc",
+                "lcoe_current",
+                "lcoe_current_optimisation",
+                "lcoe_2030_wocc",
+                "lcoe_2030_wocc",
+                "lcoe_2030_wocc",
+                "lcoe_2040_wocc",
+                "lcoe_2040_wocc",
+                "lcoe_2040_wocc",
+                "e_2030_mocc",
+                "e_2030_mocc",
+                "e_2030_mocc",
+                "e_2040_mocc",
+                "e_2040_mocc",
+                "e_2040_mocc",
+                "c_2030_mocc",
+                "c_2030_mocc",
+                "c_2030_mocc",
+                "c_2040_mocc",
+                "c_2040_mocc",
+                "c_2040_mocc",
+                "mv_2030_mocc",
+                "mv_2030_mocc",
+                "mv_2030_mocc",
+                "mv_2040_mocc",
+                "mv_2040_mocc",
+                "mv_2040_mocc",
+                "lcoe_2030_mocc",
+                "lcoe_2030_mocc",
+                "lcoe_2030_mocc",
+                "lcoe_2040_mocc",
+                "lcoe_2040_mocc",
+                "lcoe_2040_mocc",
+                "e_2030_stcc",
+                "e_2030_stcc",
+                "e_2030_stcc",
+                "e_2040_stcc",
+                "e_2040_stcc",
+                "e_2040_stcc",
+                "c_2030_stcc",
+                "c_2030_stcc",
+                "c_2030_stcc",
+                "c_2040_stcc",
+                "c_2040_stcc",
+                "c_2040_stcc",
+                "mv_2030_stcc",
+                "mv_2030_stcc",
+                "mv_2030_stcc",
+                "mv_2040_stcc",
+                "mv_2040_stcc",
+                "mv_2040_stcc",
+                "lcoe_2030_stcc",
+                "lcoe_2030_stcc",
+                "lcoe_2030_stcc",
+                "lcoe_2040_stcc",
+                "lcoe_2040_stcc",
+                "lcoe_2040_stcc"
+            ],
+            "as": [
+                "metric",
+                "value"
+            ]
+        },
+        {
+            "filter": "test('^' + prefix + '_', datum.metric)"
+        },
+        {
+            "filter": "test('_' + suffix + '$', datum.metric) || indexof(['c_current','c_current_optimisation','e_current','e_current_optimisation'], datum.metric) >= 0"
+        },
+        {
+            "calculate": "(datum.metric == 'e_current' || datum.metric == 'c_current' || datum.metric == 'mv_current' || datum.metric == 'lcoe_current') ? 1 :(datum.metric == 'e_current_optimisation' || datum.metric == 'c_current_optimisation' || datum.metric == 'mv_current_optimisation' || datum.metric == 'lcoe_current_optimisation') ? 998 :((parseInt(split(datum.metric, '_')[1]) == 2040 ? 10 :parseInt(split(datum.metric, '_')[1]) == 2070 ? 20 : 999)+(indexof(['low','medium','high'], split(datum.metric, '_')[2]) + 1))",
+            "as": "sort_index"
+        }
+    ],
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "x": {
+            "field": "metric",
+            "type": "nominal",
+            "sort": {
+                "field": "sort_index",
+                "order": "ascending"
+            },
+            "axis": {
+                "labelAngle": -45,
+                "title": "",
+                "labelExpr": "replace(replace(replace(replace(replace(replace(replace(replace(datum.label,'e_', ''), 'mv_', ''), 'c_', ''),'lcoe_', ''),'_wocc',''),'technical_potential','Technical potential'),'technical_potential','current', 'current'),'_',' ')"
+            }
+        },
+        "xOffset": {
+            "field": "feature_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative",
+            "axis": {
+                "title": "value"
+            }
+        },
+        "color": {
+            "field": "feature_name",
+            "type": "nominal",
+            "title": "Abschnitt",
+            "sort": null,
+            "scale": {
+                "range": [
+                    "#1f77b4",
+                    "#ff7f0e",
+                    "#2ca02c",
+                    "#d62728",
+                    "#9467bd",
+                    "#8c564b",
+                    "#e377c2",
+                    "#7f7f7f",
+                    "#bcbd22",
+                    "#17becf"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "feature_name"
+            },
+            {
+                "field": "metric"
+            },
+            {
+                "field": "value",
+                "type": "quantitative",
+                "format": ".1f"
+            }
+        ]
+    },
+    "background": "transparent"
+}
