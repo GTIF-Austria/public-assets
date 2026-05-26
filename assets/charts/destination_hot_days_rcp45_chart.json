@@ -7,26 +7,30 @@
   "transform": [
     {
       "fold": [
-        "1951_1960_jan_mean", "1951_1960_feb_mean", "1951_1960_mar_mean", "1951_1960_apr_mean", "1951_1960_may_mean", "1951_1960_jun_mean", "1951_1960_jul_mean", "1951_1960_aug_mean", "1951_1960_sep_mean", "1951_1960_oct_mean", "1951_1960_nov_mean", "1951_1960_dec_mean",
-        "1961_1970_jan_mean", "1961_1970_feb_mean", "1961_1970_mar_mean", "1961_1970_apr_mean", "1961_1970_may_mean", "1961_1970_jun_mean", "1961_1970_jul_mean", "1961_1970_aug_mean", "1961_1970_sep_mean", "1961_1970_oct_mean", "1961_1970_nov_mean", "1961_1970_dec_mean",
-        "1971_1980_jan_mean", "1971_1980_feb_mean", "1971_1980_mar_mean", "1971_1980_apr_mean", "1971_1980_may_mean", "1971_1980_jun_mean", "1971_1980_jul_mean", "1971_1980_aug_mean", "1971_1980_sep_mean", "1971_1980_oct_mean", "1971_1980_nov_mean", "1971_1980_dec_mean",
-        "1981_1990_jan_mean", "1981_1990_feb_mean", "1981_1990_mar_mean", "1981_1990_apr_mean", "1981_1990_may_mean", "1981_1990_jun_mean", "1981_1990_jul_mean", "1981_1990_aug_mean", "1981_1990_sep_mean", "1981_1990_oct_mean", "1981_1990_nov_mean", "1981_1990_dec_mean",
-        "1991_2000_jan_mean", "1991_2000_feb_mean", "1991_2000_mar_mean", "1991_2000_apr_mean", "1991_2000_may_mean", "1991_2000_jun_mean", "1991_2000_jul_mean", "1991_2000_aug_mean", "1991_2000_sep_mean", "1991_2000_oct_mean", "1991_2000_nov_mean", "1991_2000_dec_mean",
-        "2001_2010_jan_mean", "2001_2010_feb_mean", "2001_2010_mar_mean", "2001_2010_apr_mean", "2001_2010_may_mean", "2001_2010_jun_mean", "2001_2010_jul_mean", "2001_2010_aug_mean", "2001_2010_sep_mean", "2001_2010_oct_mean", "2001_2010_nov_mean", "2001_2010_dec_mean",
-        "2011_2020_jan_mean", "2011_2020_feb_mean", "2011_2020_mar_mean", "2011_2020_apr_mean", "2011_2020_may_mean", "2011_2020_jun_mean", "2011_2020_jul_mean", "2011_2020_aug_mean", "2011_2020_sep_mean", "2011_2020_oct_mean", "2011_2020_nov_mean", "2011_2020_dec_mean",
-        "2021_2030_jan_mean", "2021_2030_feb_mean", "2021_2030_mar_mean", "2021_2030_apr_mean", "2021_2030_may_mean", "2021_2030_jun_mean", "2021_2030_jul_mean", "2021_2030_aug_mean", "2021_2030_sep_mean", "2021_2030_oct_mean", "2021_2030_nov_mean", "2021_2030_dec_mean",
-        "2031_2040_jan_mean", "2031_2040_feb_mean", "2031_2040_mar_mean", "2031_2040_apr_mean", "2031_2040_may_mean", "2031_2040_jun_mean", "2031_2040_jul_mean", "2031_2040_aug_mean", "2031_2040_sep_mean", "2031_2040_oct_mean", "2031_2040_nov_mean", "2031_2040_dec_mean",
-        "2041_2050_jan_mean", "2041_2050_feb_mean", "2041_2050_mar_mean", "2041_2050_apr_mean", "2041_2050_may_mean", "2041_2050_jun_mean", "2041_2050_jul_mean", "2041_2050_aug_mean", "2041_2050_sep_mean", "2041_2050_oct_mean", "2041_2050_nov_mean", "2041_2050_dec_mean",
-        "2051_2060_jan_mean", "2051_2060_feb_mean", "2051_2060_mar_mean", "2051_2060_apr_mean", "2051_2060_may_mean", "2051_2060_jun_mean", "2051_2060_jul_mean", "2051_2060_aug_mean", "2051_2060_sep_mean", "2051_2060_oct_mean", "2051_2060_nov_mean", "2051_2060_dec_mean",
-        "2061_2070_jan_mean", "2061_2070_feb_mean", "2061_2070_mar_mean", "2061_2070_apr_mean", "2061_2070_may_mean", "2061_2070_jun_mean", "2061_2070_jul_mean", "2061_2070_aug_mean", "2061_2070_sep_mean", "2061_2070_oct_mean", "2061_2070_nov_mean", "2061_2070_dec_mean",
-        "2071_2080_jan_mean", "2071_2080_feb_mean", "2071_2080_mar_mean", "2071_2080_apr_mean", "2071_2080_may_mean", "2071_2080_jun_mean", "2071_2080_jul_mean", "2071_2080_aug_mean", "2071_2080_sep_mean", "2071_2080_oct_mean", "2071_2080_nov_mean", "2071_2080_dec_mean",
-        "2081_2090_jan_mean", "2081_2090_feb_mean", "2081_2090_mar_mean", "2081_2090_apr_mean", "2081_2090_may_mean", "2081_2090_jun_mean", "2081_2090_jul_mean", "2081_2090_aug_mean", "2081_2090_sep_mean", "2081_2090_oct_mean", "2081_2090_nov_mean", "2081_2090_dec_mean",
-        "2091_2100_jan_mean", "2091_2100_feb_mean", "2091_2100_mar_mean", "2091_2100_apr_mean", "2091_2100_may_mean", "2091_2100_jun_mean", "2091_2100_jul_mean", "2091_2100_aug_mean", "2091_2100_sep_mean", "2091_2100_oct_mean", "2091_2100_nov_mean", "2091_2100_dec_mean"
+        "p1951_1960_jan_mean", "p1951_1960_feb_mean", "p1951_1960_mar_mean", "p1951_1960_apr_mean", "p1951_1960_may_mean", "p1951_1960_jun_mean", "p1951_1960_jul_mean", "p1951_1960_aug_mean", "p1951_1960_sep_mean", "p1951_1960_oct_mean", "p1951_1960_nov_mean", "p1951_1960_dec_mean",
+        "p1961_1970_jan_mean", "p1961_1970_feb_mean", "p1961_1970_mar_mean", "p1961_1970_apr_mean", "p1961_1970_may_mean", "p1961_1970_jun_mean", "p1961_1970_jul_mean", "p1961_1970_aug_mean", "p1961_1970_sep_mean", "p1961_1970_oct_mean", "p1961_1970_nov_mean", "p1961_1970_dec_mean",
+        "p1971_1980_jan_mean", "p1971_1980_feb_mean", "p1971_1980_mar_mean", "p1971_1980_apr_mean", "p1971_1980_may_mean", "p1971_1980_jun_mean", "p1971_1980_jul_mean", "p1971_1980_aug_mean", "p1971_1980_sep_mean", "p1971_1980_oct_mean", "p1971_1980_nov_mean", "p1971_1980_dec_mean",
+        "p1981_1990_jan_mean", "p1981_1990_feb_mean", "p1981_1990_mar_mean", "p1981_1990_apr_mean", "p1981_1990_may_mean", "p1981_1990_jun_mean", "p1981_1990_jul_mean", "p1981_1990_aug_mean", "p1981_1990_sep_mean", "p1981_1990_oct_mean", "p1981_1990_nov_mean", "p1981_1990_dec_mean",
+        "p1991_2000_jan_mean", "p1991_2000_feb_mean", "p1991_2000_mar_mean", "p1991_2000_apr_mean", "p1991_2000_may_mean", "p1991_2000_jun_mean", "p1991_2000_jul_mean", "p1991_2000_aug_mean", "p1991_2000_sep_mean", "p1991_2000_oct_mean", "p1991_2000_nov_mean", "p1991_2000_dec_mean",
+        "p2001_2010_jan_mean", "p2001_2010_feb_mean", "p2001_2010_mar_mean", "p2001_2010_apr_mean", "p2001_2010_may_mean", "p2001_2010_jun_mean", "p2001_2010_jul_mean", "p2001_2010_aug_mean", "p2001_2010_sep_mean", "p2001_2010_oct_mean", "p2001_2010_nov_mean", "p2001_2010_dec_mean",
+        "p2011_2020_jan_mean", "p2011_2020_feb_mean", "p2011_2020_mar_mean", "p2011_2020_apr_mean", "p2011_2020_may_mean", "p2011_2020_jun_mean", "p2011_2020_jul_mean", "p2011_2020_aug_mean", "p2011_2020_sep_mean", "p2011_2020_oct_mean", "p2011_2020_nov_mean", "p2011_2020_dec_mean",
+        "p2021_2030_jan_mean", "p2021_2030_feb_mean", "p2021_2030_mar_mean", "p2021_2030_apr_mean", "p2021_2030_may_mean", "p2021_2030_jun_mean", "p2021_2030_jul_mean", "p2021_2030_aug_mean", "p2021_2030_sep_mean", "p2021_2030_oct_mean", "p2021_2030_nov_mean", "p2021_2030_dec_mean",
+        "p2031_2040_jan_mean", "p2031_2040_feb_mean", "p2031_2040_mar_mean", "p2031_2040_apr_mean", "p2031_2040_may_mean", "p2031_2040_jun_mean", "p2031_2040_jul_mean", "p2031_2040_aug_mean", "p2031_2040_sep_mean", "p2031_2040_oct_mean", "p2031_2040_nov_mean", "p2031_2040_dec_mean",
+        "p2041_2050_jan_mean", "p2041_2050_feb_mean", "p2041_2050_mar_mean", "p2041_2050_apr_mean", "p2041_2050_may_mean", "p2041_2050_jun_mean", "p2041_2050_jul_mean", "p2041_2050_aug_mean", "p2041_2050_sep_mean", "p2041_2050_oct_mean", "p2041_2050_nov_mean", "p2041_2050_dec_mean",
+        "p2051_2060_jan_mean", "p2051_2060_feb_mean", "p2051_2060_mar_mean", "p2051_2060_apr_mean", "p2051_2060_may_mean", "p2051_2060_jun_mean", "p2051_2060_jul_mean", "p2051_2060_aug_mean", "p2051_2060_sep_mean", "p2051_2060_oct_mean", "p2051_2060_nov_mean", "p2051_2060_dec_mean",
+        "p2061_2070_jan_mean", "p2061_2070_feb_mean", "p2061_2070_mar_mean", "p2061_2070_apr_mean", "p2061_2070_may_mean", "p2061_2070_jun_mean", "p2061_2070_jul_mean", "p2061_2070_aug_mean", "p2061_2070_sep_mean", "p2061_2070_oct_mean", "p2061_2070_nov_mean", "p2061_2070_dec_mean",
+        "p2071_2080_jan_mean", "p2071_2080_feb_mean", "p2071_2080_mar_mean", "p2071_2080_apr_mean", "p2071_2080_may_mean", "p2071_2080_jun_mean", "p2071_2080_jul_mean", "p2071_2080_aug_mean", "p2071_2080_sep_mean", "p2071_2080_oct_mean", "p2071_2080_nov_mean", "p2071_2080_dec_mean",
+        "p2081_2090_jan_mean", "p2081_2090_feb_mean", "p2081_2090_mar_mean", "p2081_2090_apr_mean", "p2081_2090_may_mean", "p2081_2090_jun_mean", "p2081_2090_jul_mean", "p2081_2090_aug_mean", "p2081_2090_sep_mean", "p2081_2090_oct_mean", "p2081_2090_nov_mean", "p2081_2090_dec_mean",
+        "p2091_2100_jan_mean", "p2091_2100_feb_mean", "p2091_2100_mar_mean", "p2091_2100_apr_mean", "p2091_2100_may_mean", "p2091_2100_jun_mean", "p2091_2100_jul_mean", "p2091_2100_aug_mean", "p2091_2100_sep_mean", "p2091_2100_oct_mean", "p2091_2100_nov_mean", "p2091_2100_dec_mean"
       ],
       "as": ["metric", "value"]
     },
     {
       "calculate": "split(datum.metric, '_')[0]",
+      "as": "pyear"
+    },
+    {
+      "calculate": "substring(datum.pyear, 1)",
       "as": "year"
     },
     {
