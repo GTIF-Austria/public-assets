@@ -3,6 +3,13 @@
   "data": {
     "name": "timeseries"
   },
+  "params": [
+    {
+      "name": "grid",
+      "select": "interval",
+      "bind": "scales"
+    }
+  ],
   "title": "Hot Days RCP 4.5 Time Series",
   "transform": [
     {
@@ -217,8 +224,24 @@
       "as": "month_str"
     },
     {
-      "calculate": "datetime(datum.start_year, indexof(['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'], datum.month_str), 1)",
-      "as": "date"
+      "calculate": "indexof(['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'], datum.month_str)",
+      "as": "month_index"
+    },
+    {
+      "calculate": "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.month_index]",
+      "as": "month_label"
+    },
+    {
+      "calculate": "(datum.start_year - 1951) / 10",
+      "as": "decade_index"
+    },
+    {
+      "calculate": "datum.decade_index * 12 + datum.month_index",
+      "as": "period_order"
+    },
+    {
+      "calculate": "datum.decade_label + ' ' + datum.month_label",
+      "as": "period_label"
     },
     {
       "calculate": "datum.tourism_region + ' (' + datum.elevation + ')'",
@@ -231,9 +254,14 @@
   },
   "encoding": {
     "x": {
-      "field": "date",
-      "type": "temporal",
-      "title": "Time"
+      "field": "period_order",
+      "type": "quantitative",
+      "title": "Period",
+      "axis": {
+        "labelExpr": "datum.value % 12 == 0 ? ['1951-1960','1961-1970','1971-1980','1981-1990','1991-2000','2001-2010','2011-2020','2021-2030','2031-2040','2041-2050','2051-2060','2061-2070','2071-2080','2081-2090','2091-2100'][datum.value / 12] : ''",
+        "labelAngle": -45,
+        "tickMinStep": 1
+      }
     },
     "y": {
       "field": "value",
@@ -259,19 +287,17 @@
         "title": "Decade"
       },
       {
-        "field": "month_str",
+        "field": "month_label",
         "title": "Month"
       },
       {
-        "field": "date",
-        "type": "temporal",
-        "title": "Date",
-        "format": "%b %Y"
+        "field": "period_label",
+        "title": "Period"
       },
       {
         "field": "value",
         "type": "quantitative",
-        "title": "Mean",
+        "title": "Mean Hot Days",
         "format": ".2f"
       }
     ]
