@@ -11,7 +11,7 @@
             "options": {
                 "drawtools": {
                     "for": "eox-map#main",
-                    "layerId": "_rcp45",
+                    "layerId": "destination_hot_days_rcp45;:;2026-05-26T00:00:00Z;:;Hot Days RCP 4.5;:;EPSG:3857",
                     "featureNameKey": "tourism_region",
                     "featureStyles": {
                         "click": {
