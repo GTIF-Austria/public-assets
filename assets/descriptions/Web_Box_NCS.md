@@ -5,7 +5,7 @@ This collection provides a harmonized geospatial data framework designed for dMR
 # Core Layers in Collection
 ## Biodiversity & Carbon Farming Index (BCFI): 
 A multi-criteria assessment score demonstrating the value-creation potential of your land regarding biodiversity, climate mitigation, and regenerative agriculture.
-Impacts scaled in BCFI are shared among four benefit categories - biodiversity, climate, soil and water - and translates them into a relative score for each parcel. Each category is scored using objectively measurable indicators (from EO, in-field data and management records), then weighted to reflect its positive contribution by impact category to ecosystem performance and resilience.
+Impacts scaled in BCFI are shared among four benefit categories : biodiversity, climate, soil and water. The BCFI index translates them into a relative score for each parcel. Each category is scored using objectively measurable indicators (from EO, in-field data and management records), then weighted to reflect its positive contribution by impact category to ecosystem performance and resilience.
 
 ## Harmonized LULUCF Stack: 
 A multi-band composite raster classifying land cover into standardized agricultural, forestry, grassland, and wetland classes, stacked into a prioritized categorical classification.
@@ -14,7 +14,7 @@ A multi-band composite raster classifying land cover into standardized agricultu
 High-resolution delineation of non-productive landscape structures (hedgerows, tree rows, isolated woody features, buffer strips, and stone/grassy boundaries) built by combining GSA declarations and Copernicus Small Woody Features (SWF) detections for eco-scheme compliance and biodiversity corridors.
 
 # Data Sources 
-- ECOSYS NCS - BCFI analytics layer combines EO datasets, GSA declaration, soil estimation (Bodenkarte) to accurately verify and score parcel-level performance.
+ECOSYS NCS - BCFI analytics layer combines EO datasets, GSA declaration, soil estimation (Bodenkarte) to accurately verify and score parcel-level performance.
 
 - GSA (INVEKOS - AMA): Field parcel identification data and farmer declarations identifying crop types, declared boundaries, agroforestry, and ecological focus areas.
 
